@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "./globals.css";
+import Nav from "./ui/Nav";
+// import Footer from "./ui/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  weight: ["400", "500", "300", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${ubuntu.className} w-screen h-screen flex bg-Magnolia  sm:items-center  sm:justify-center relative`}
+      >
+        <div className=" flex flex-col sm:flex-row sm:w-[1000px] sm:h-[600px] sm:rounded-xl sm:bg-white sm:p-2 ">
+          <div>
+            <Nav />
+          </div>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

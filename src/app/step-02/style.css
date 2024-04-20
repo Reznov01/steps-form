@@ -1,0 +1,4 @@
+.activeItem {
+  border: 1px solid hsl(213, 96%, 18%);
+  background: hsla(194, 99%, 50%, 0.054);
+}
