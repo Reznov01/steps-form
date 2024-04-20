@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 import Nav from "./ui/Nav";
 // import Footer from "./ui/Footer";
 
@@ -21,6 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>Change front mentro</title>
+      </Head>
       <body
         className={`${ubuntu.className} w-screen h-screen flex bg-Magnolia  sm:items-center  sm:justify-center relative`}
       >

@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+
 export default function pageStep01() {
   const router = useRouter();
-  localStorage.clear();
 
   const [userData, setUserData] = useState({
     user: "",
@@ -64,6 +64,7 @@ export default function pageStep01() {
       router.push("/step-02");
     }
   };
+
   const validEmail = (email: string) => {
     var patron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     console.log(patron.test(email));
@@ -72,7 +73,6 @@ export default function pageStep01() {
 
   const validPhone = (phoneNumber: string) => {
     const phoneRegex = /^(\+)?(?:[0-9] ?){6,14}[0-9]$/;
-
     return phoneRegex.test(phoneNumber);
   };
 
@@ -89,7 +89,6 @@ export default function pageStep01() {
           ...validingData,
           emailUser: validEmail(userData.email) ? "hidden" : "show",
         });
-
         break;
       case "phoneUser":
         setValidigData({
@@ -104,19 +103,11 @@ export default function pageStep01() {
     router.back();
   };
 
-  // validando campos
+  // Validando campos
 
   return (
     <div className="relative w-screen h-screen sm:h-[590px]">
-      <div
-        className="absolute w-[360px] h-[440px] bg-white
-     inset-x-0 mx-auto top-[-76px] rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]
-     animate-fade-down
-     sm:top-12 sm:w-[90%]
-    sm:shadow-none
-    sm:font-bold
-     "
-      >
+      <div className="absolute w-[360px] h-[440px] bg-white inset-x-0 mx-auto top-[-76px] rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] animate-fade-down sm:top-12 sm:w-[90%] sm:shadow-none sm:font-bold">
         <div className="p-6">
           <div className="flex flex-col gap-3 mb-4">
             <h2 className="text-bold text-3xl text-">Personal info</h2>
